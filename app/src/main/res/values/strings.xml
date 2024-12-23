@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Divent</string>
+    <string name="home">Home</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="finish">Finish</string>
+    <string name="finished_event">Finished Events</string>
+    <string name="upcoming_event">Upcoming Events</string>
+    <string name="selamat_datang_di_divent">Selamat datang di Divent!</string>
+    <string name="registrasi">Registrasi</string>
+    <string name="event_banner">Event banner</string>
+    <string name="logo">Logo</string>
+    <string name="description">Description</string>
+    <string name="owner_name_dicoding">Owner name: Dicoding</string>
+    <string name="splash_text">Explore and join\na bouch of events\nwith Divent</string>
+    <string name="something_went_wrong">Something went wrong</string>
+</resources>

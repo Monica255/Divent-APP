@@ -1,0 +1,61 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="Theme.Divent" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryVariant">@color/grey</item>
+<!--        <item name="colorOnPrimary">@color/white</item>-->
+<!--        &lt;!&ndash; Secondary brand color. &ndash;&gt;-->
+<!--        <item name="colorSecondary">@color/teal_200</item>-->
+<!--        <item name="colorSecondaryVariant">@color/teal_700</item>-->
+<!--        <item name="colorOnSecondary">@color/black</item>-->
+<!--        &lt;!&ndash; Status bar color. &ndash;&gt;-->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="screen">
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="rv_item">
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="placeholder">
+        <item name="android:src">@drawable/placeholder</item>
+    </style>
+    <style name="placeholder_banner">
+        <item name="android:src">@drawable/placeholder_banner</item>
+    </style>
+
+    <style name="text">
+        <item name="android:textColor">@color/dark_blue</item>
+    </style>
+    <style name="text2">
+        <item name="android:textColor">@color/grey</item>
+    </style>
+    <style name="text3">
+        <item name="android:textColor">@color/green</item>
+    </style>
+
+    <style name="logo">
+        <item name="android:src">@drawable/logo_light</item>
+    </style>
+
+    <style name="ornament5">
+        <item name="android:src">@drawable/ornament5_light</item>
+    </style>
+
+    <style name="ornament3">
+        <item name="android:src">@drawable/ornament3_light</item>
+    </style>
+    <style name="navbar">
+        <item name="indicatorColor">@color/yellow</item>
+        <item name="iconTint">@color/grey</item>
+        <item name="iconTintActive">@color/white</item>
+        <item name="textColor">@color/white</item>
+        <item name="backgroundColor">@color/white</item>
+    </style>
+</resources>

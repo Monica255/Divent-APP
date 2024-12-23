@@ -1,0 +1,48 @@
+<resources>
+
+    <style name="screen">
+        <item name="android:background">@color/dark_blue</item>
+    </style>
+
+    <style name="rv_item">
+        <item name="android:background">@color/dark_blue2</item>
+    </style>
+
+    <style name="placeholder">
+        <item name="android:src">@drawable/placeholder_dark</item>
+    </style>
+
+    <style name="placeholder_banner">
+        <item name="android:src">@drawable/placeholder_banner_dark</item>
+    </style>
+
+    <style name="text">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="text2">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="text3">
+        <item name="android:textColor">@color/green2</item>
+    </style>
+
+    <style name="logo">
+        <item name="android:src">@drawable/logo_dark</item>
+    </style>
+
+    <style name="ornament5">
+        <item name="android:src">@drawable/ornament5</item>
+    </style>
+
+    <style name="ornament3">
+        <item name="android:src">@drawable/ornament3</item>
+    </style>
+
+    <style name="navbar">
+        <item name="indicatorColor">@color/yellow</item>
+        <item name="iconTint">@color/white</item>
+        <item name="iconTintActive">@color/white</item>
+        <item name="textColor">@color/white</item>
+        <item name="backgroundColor">@color/dark_blue</item>
+    </style>
+</resources>

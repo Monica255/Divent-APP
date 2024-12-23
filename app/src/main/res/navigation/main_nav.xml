@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.example.divent.ui.content.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_upcomingFragment"
+            app:destination="@id/upcoming" />
+        <action
+            android:id="@+id/action_homeFragment_to_finishedFragment"
+            app:destination="@id/finished" />
+    </fragment>
+    <fragment
+        android:id="@+id/upcoming"
+        android:name="com.example.divent.ui.content.upcoming.UpcomingFragment"
+        android:label="fragment_upcoming"
+        tools:layout="@layout/fragment_upcoming" >
+        <action
+            android:id="@+id/action_upcomingFragment_to_homeFragment"
+            app:destination="@id/home" />
+        <action
+            android:id="@+id/action_upcomingFragment_to_finishedFragment"
+            app:destination="@id/finished" />
+    </fragment>
+    <fragment
+        android:id="@+id/finished"
+        android:name="com.example.divent.ui.content.finished.FinishedFragment"
+        android:label="fragment_finished"
+        tools:layout="@layout/fragment_finished" >
+        <action
+            android:id="@+id/action_finishedFragment_to_upcomingFragment"
+            app:destination="@id/upcoming" />
+        <action
+            android:id="@+id/action_finishedFragment_to_homeFragment"
+            app:destination="@id/home" />
+    </fragment>
+</navigation>
