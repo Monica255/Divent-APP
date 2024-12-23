@@ -25,6 +25,7 @@
                 android:text="@string/selamat_datang_di_divent"
                 android:textSize="24sp"
                 style="@style/text"
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 

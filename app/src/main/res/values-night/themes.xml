@@ -1,5 +1,10 @@
 <resources>
-
+    <style name="Theme.Divent" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/dark_blue</item>
+        <item name="colorPrimaryVariant">@color/dark_blue2</item>
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    </style>
     <style name="screen">
         <item name="android:background">@color/dark_blue</item>
     </style>
@@ -37,7 +42,9 @@
     <style name="ornament3">
         <item name="android:src">@drawable/ornament3</item>
     </style>
-
+    <style name="setting">
+        <item name="tint">@color/yellow</item>
+    </style>
     <style name="navbar">
         <item name="indicatorColor">@color/yellow</item>
         <item name="iconTint">@color/white</item>

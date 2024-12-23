@@ -2,8 +2,8 @@ package com.example.divent.core.domain.usecase
 
 import com.example.divent.core.data.Resource
 import com.example.divent.core.data.source.remote.model.Event
-import com.example.divent.core.data.source.remote.network.EVENT
 import com.example.divent.core.domain.model.DetailEvent
+import com.example.divent.util.EVENT
 import kotlinx.coroutines.flow.Flow
 
 interface EventUseCase {

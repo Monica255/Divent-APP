@@ -9,7 +9,7 @@ import com.bumptech.glide.Glide
 import com.example.divent.R
 import com.example.divent.core.data.source.remote.model.Event
 import com.example.divent.databinding.ItemEventBinding
-import com.example.divent.ui.MyDiffCallback
+import com.example.divent.util.MyDiffCallback
 
 
 class EventAdapter(

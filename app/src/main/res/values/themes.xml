@@ -51,6 +51,10 @@
     <style name="ornament3">
         <item name="android:src">@drawable/ornament3_light</item>
     </style>
+
+    <style name="setting">
+        <item name="tint">@color/green</item>
+    </style>
     <style name="navbar">
         <item name="indicatorColor">@color/yellow</item>
         <item name="iconTint">@color/grey</item>

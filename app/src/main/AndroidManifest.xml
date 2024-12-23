@@ -6,7 +6,6 @@
 
     <application
         android:name=".MyApplication"
-        android:windowSoftInputMode="adjustNothing"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -15,11 +14,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Divent"
+        android:windowSoftInputMode="adjustNothing"
         tools:targetApi="31">
+        <activity
+            android:name=".ui.content.setting.SettingActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.content.detail.DetailActivity"
             android:exported="false" />
         <activity
+            android:launchMode="singleTop"
             android:name=".ui.content.HomeActivity"
             android:exported="false" />
         <activity

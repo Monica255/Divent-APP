@@ -1,28 +1,7 @@
-package com.example.divent.ui
+package com.example.divent.util
 
-
-import android.widget.SearchView
 import androidx.recyclerview.widget.DiffUtil
 import com.example.divent.core.data.source.remote.model.Event
-import io.reactivex.rxjava3.subjects.PublishSubject
-
-fun SearchView.getQueryTextChangeObservable(): io.reactivex.rxjava3.core.Observable<String> {
-    val subject = PublishSubject.create<String>()
-
-    this.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-        override fun onQueryTextSubmit(query: String?): Boolean {
-            subject.onComplete()
-            return true
-        }
-
-        override fun onQueryTextChange(newText: String?): Boolean {
-            subject.onNext(newText ?: "")
-            return true
-        }
-    })
-
-    return subject
-}
 
 class MyDiffCallback(
     private val oldList: List<Event>,

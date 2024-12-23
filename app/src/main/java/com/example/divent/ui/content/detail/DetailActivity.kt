@@ -13,7 +13,11 @@ import com.example.divent.R
 import com.example.divent.core.data.Resource
 import com.example.divent.core.domain.model.DetailEvent
 import com.example.divent.databinding.ActivityDetailBinding
+import com.example.divent.util.Mapper
 import dagger.hilt.android.AndroidEntryPoint
+import io.reactivex.rxjava3.disposables.CompositeDisposable
+import io.reactivex.rxjava3.schedulers.Schedulers
+import io.reactivex.rxjava3.subjects.PublishSubject
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -21,13 +25,16 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
     private val viewModel: DetailViewModel by viewModels()
     var id =0
+    private val compositeDisposable = CompositeDisposable()
+    private val checkBoxClicks = PublishSubject.create<Boolean>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setActionBar()
+
         if(viewModel.detailData!=null){
-            showData(viewModel.detailData)
+            showData(viewModel.detailData!!)
         }else{
             id = intent.getIntExtra("id",0)
             lifecycleScope.launch {
@@ -43,7 +50,7 @@ class DetailActivity : AppCompatActivity() {
                             showError(false)
                             showItem(true)
                             viewModel.detailData=it.data
-                            showData(it.data)
+                            it.data?.let { it1 -> showData(it1) }
                         }
                         is Resource.Error->{
                             showLoading(false)
@@ -58,35 +65,56 @@ class DetailActivity : AppCompatActivity() {
         }
     }
 
-    private fun showData(event: DetailEvent?) {
-        event?.let{
-            Glide.with(this)
-                .load(event.mediaCover)
-                .placeholder(R.drawable.placeholder)
-                .error(R.drawable.placeholder)
-                .into(binding.ivBanner)
-            binding.tvCategory.text =event.category
-            binding.tvOwner.text =event.ownerName
-            binding.tvTitle.text =event.name
-            binding.tvSummary.text = event.summary
-            val left = event.quota - event.registrants
-            val text = "$left\nquota left"
-            binding.tvRegis.text = text
-            val time = event.beginTime
+    private fun showData(event: DetailEvent) {
+        Glide.with(this)
+            .load(event.mediaCover)
+            .placeholder(R.drawable.placeholder_banner)
+            .error(R.drawable.placeholder_banner)
+            .into(binding.ivBanner)
+        binding.tvCategory.text =event.category
+        binding.tvOwner.text =event.ownerName
+        binding.tvTitle.text =event.name
+        binding.tvSummary.text = event.summary
+        val left = event.quota - event.registrants
+        val text = "$left\nquota left"
+        binding.tvRegis.text = text
+        val time = event.beginTime
 
-            val datePart = time.substringBefore(" ")
-            val clockPart = time.substringAfter(" ")
+        val datePart = time.substringBefore(" ")
+        val clockPart = time.substringAfter(" ")
 
-            binding.tvDate.text = datePart
-            binding.tvClock.text = clockPart
-            val str = HtmlCompat.fromHtml(event.description,HtmlCompat.FROM_HTML_MODE_LEGACY)
-            binding.tvDesc.text = str
+        binding.tvDate.text = datePart
+        binding.tvClock.text = clockPart
+        val str = HtmlCompat.fromHtml(event.description,HtmlCompat.FROM_HTML_MODE_LEGACY)
+        binding.tvDesc.text = str
 
-            binding.btRegis.setOnClickListener{
-                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(event.link))
-                startActivity(intent)
-            }
+        binding.btRegis.setOnClickListener{
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(event.link))
+            startActivity(intent)
         }
+        lifecycleScope.launch {
+            binding.cbFav.isChecked = viewModel.isEventExist(event.id)
+        }
+
+        binding.cbFav.setOnCheckedChangeListener { _, isChecked ->
+            checkBoxClicks.onNext(isChecked)
+        }
+
+        compositeDisposable.add(
+            checkBoxClicks
+                .subscribeOn(Schedulers.io())
+                .observeOn(Schedulers.io())
+                .subscribe { isChecked ->
+                    lifecycleScope.launch {
+                        if (isChecked) {
+                            viewModel.insertEvent(Mapper.detailDomainToEntity(event))
+                        } else {
+                            viewModel.deleteEventById(event.id)
+                        }
+                        setResult(RESULT_OK)
+                    }
+                }
+        )
     }
 
     private fun showLoading(isShow:Boolean){

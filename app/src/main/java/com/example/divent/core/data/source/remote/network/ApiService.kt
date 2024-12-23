@@ -7,10 +7,6 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 
-enum class EVENT(val value: Int) {
-    UPCOMING(1),
-    FINISHED(0),
-}
 
 interface ApiService {
     @GET("events")

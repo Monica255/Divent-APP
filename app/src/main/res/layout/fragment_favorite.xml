@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.content.upcoming.UpcomingFragment">
+
+    <TextView
+        android:id="@+id/tv_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/margin_start_end"
+        android:layout_marginStart="@dimen/margin_start_end"
+        android:text="@string/favorite_events"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        style="@style/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_marginTop="@dimen/margin_variation"
+        android:id="@+id/tv_explore"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        android:layout_marginStart="@dimen/margin_start_end"
+        android:text="@string/explore_all_your_favorite_events"
+        android:textSize="16sp"
+        style="@style/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        tools:listitem="@layout/item_event"
+        android:id="@+id/rv_event"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_explore"
+        android:layout_margin="@dimen/margin_variation"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+    <include
+        android:id="@+id/loading"
+        layout="@layout/loading" />
+    <include
+        android:id="@+id/no_data"
+        layout="@layout/no_data" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

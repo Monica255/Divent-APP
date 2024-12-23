@@ -1,5 +1,6 @@
 package com.example.divent.ui.content
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuInflater
 import android.widget.PopupMenu
@@ -8,6 +9,8 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.example.divent.R
 import com.example.divent.databinding.ActivityHomeBinding
+import com.example.divent.ui.content.detail.DetailActivity
+import com.example.divent.ui.content.setting.SettingActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -20,6 +23,10 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
         setupSmoothBottomMenu()
 
+        binding.setting.setOnClickListener {
+            val intent = Intent(this, SettingActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun setupSmoothBottomMenu() {
@@ -30,5 +37,4 @@ class HomeActivity : AppCompatActivity() {
         val navController: NavController = findNavController(R.id.frame_container)
         binding.bottomBar.setupWithNavController(popupMenu.menu, navController)
     }
-
 }

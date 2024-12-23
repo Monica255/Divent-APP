@@ -22,8 +22,20 @@
             android:layout_gravity="start"
             android:layout_marginTop="@dimen/margin_start_end"
             android:contentDescription="@string/logo"
-            android:text="@string/home"
             android:textSize="20sp" />
+
+        <ImageView
+            style="@style/setting"
+            android:id="@+id/setting"
+            android:src="@drawable/icon_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginTop="@dimen/margin_start_end"
+            android:layout_marginEnd="@dimen/margin_start_end"
+            android:contentDescription="@string/logo"
+            android:textSize="20sp" />
+
     </androidx.appcompat.widget.Toolbar>
 
     <fragment
@@ -42,7 +54,8 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/menu_bottom_navbar" />
+        app:menu="@menu/menu_bottom_navbar"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

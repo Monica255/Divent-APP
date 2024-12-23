@@ -46,15 +46,38 @@
                 tools:ignore="ImageContrastCheck" />
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cv_fav"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="@dimen/margin_variation"
+                app:cardBackgroundColor="@color/green"
+                app:cardCornerRadius="20dp"
+                android:layout_marginTop="@dimen/margin_variation"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_banner">
+
+                <CheckBox
+                    android:id="@+id/cb_fav"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/selector_favorite"
+                    android:button="@null"
+                    android:checked="false"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
                 android:id="@+id/cv_category"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_start_end"
-                android:layout_marginTop="@dimen/margin_variation"
+                android:layout_marginStart="@dimen/margin_variation"
                 app:cardBackgroundColor="@color/yellow"
                 app:cardCornerRadius="30dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/iv_banner">
+                app:layout_constraintBottom_toBottomOf="@id/cv_fav"
+                app:layout_constraintStart_toEndOf="@id/cv_fav"
+                app:layout_constraintTop_toTopOf="@id/cv_fav">
 
                 <TextView
                     android:id="@+id/tv_category"
@@ -83,7 +106,6 @@
                 android:layout_marginEnd="@dimen/margin_start_end"
                 android:ellipsize="end"
                 android:gravity="center_vertical"
-                android:maxLines="2"
                 android:shadowColor="@color/grey"
                 android:shadowDx="2"
                 android:shadowDy="2"
@@ -179,7 +201,6 @@
                     </LinearLayout>
 
                     <TextView
-                        android:textAlignment="center"
                         android:id="@+id/tv_regis"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
@@ -190,6 +211,7 @@
                         android:maxLines="2"
                         android:paddingStart="@dimen/margin_variation"
                         android:paddingEnd="@dimen/margin_variation"
+                        android:textAlignment="center"
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         android:textStyle="bold"
@@ -251,6 +273,7 @@
             android:layout_height="wrap_content">
 
             <Button
+                android:textColor="@color/white"
                 android:id="@+id/bt_regis"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"

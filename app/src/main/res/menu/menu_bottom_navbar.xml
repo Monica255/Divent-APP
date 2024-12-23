@@ -16,4 +16,9 @@
         android:title="@string/finish"
         android:icon="@drawable/icon_finished"/>
 
+    <item
+        android:id="@+id/favorite"
+        android:title="@string/favorite"
+        android:icon="@drawable/icon_star_full"/>
+
 </menu>

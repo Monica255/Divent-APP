@@ -6,8 +6,8 @@ import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.divent.core.data.Resource
 import com.example.divent.core.data.source.remote.model.Event
-import com.example.divent.core.data.source.remote.network.EVENT
 import com.example.divent.core.domain.usecase.EventUseCase
+import com.example.divent.util.EVENT
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -15,10 +15,8 @@ import javax.inject.Inject
 @HiltViewModel
 class FinishedViewModel @Inject constructor(private val eventUseCase: EventUseCase): ViewModel(){
     suspend fun getEvent(type: EVENT, q:String?=null, limit:Int?=null)= eventUseCase.getEvent(type,q,limit).asLiveData()
-
     val showErrorLiveData = MutableLiveData<Boolean>()
     val showLoadingLiveData = MutableLiveData<Boolean>()
-
     val moreFinishedEventLiveData = MutableLiveData<List<Event>?>()
 
     fun searchEvents(query: String?= null) {

@@ -84,6 +84,17 @@ dependencies {
     implementation(libs.rxjava)
     implementation(libs.rxbinding)
 
+    // Navbar
     implementation (libs.smoothbottombar)
+
+    // Room
+    implementation (libs.androidx.room.runtime)
+    kapt (libs.androidx.room.compiler)
+    implementation (libs.androidx.room.ktx)
+
+    // Datastore
+    implementation (libs.androidx.datastore.preferences)
+    // Coroutine dependencies
+    implementation (libs.kotlinx.coroutines.android)
 
 }

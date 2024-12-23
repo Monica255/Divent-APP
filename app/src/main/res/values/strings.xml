@@ -13,4 +13,11 @@
     <string name="owner_name_dicoding">Owner name: Dicoding</string>
     <string name="splash_text">Explore and join\na bouch of events\nwith Divent</string>
     <string name="something_went_wrong">Something went wrong</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="favorite_events">Favorite Events</string>
+    <string name="explore_all_your_favorite_events">Explore all your favorite events</string>
+    <string name="favorite">Favorite</string>
+    <string name="dark_theme">Dark Theme</string>
+    <string name="enable_notification">Enable Notification</string>
 </resources>

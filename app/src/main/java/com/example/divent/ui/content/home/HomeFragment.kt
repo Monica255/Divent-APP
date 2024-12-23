@@ -10,10 +10,10 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.divent.core.data.Resource
-import com.example.divent.core.data.source.remote.network.EVENT
 import com.example.divent.databinding.FragmentHomeBinding
 import com.example.divent.ui.content.EventAdapter
 import com.example.divent.ui.content.detail.DetailActivity
+import com.example.divent.util.EVENT
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 

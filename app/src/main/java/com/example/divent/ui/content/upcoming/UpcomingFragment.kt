@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.divent.databinding.FragmentUpcomingBinding
 import com.example.divent.ui.content.EventAdapter
 import com.example.divent.ui.content.detail.DetailActivity
-import com.example.divent.ui.getQueryTextChangeObservable
+import com.example.divent.util.getQueryTextChangeObservable
 import dagger.hilt.android.AndroidEntryPoint
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
