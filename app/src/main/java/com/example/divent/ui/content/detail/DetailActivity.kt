@@ -13,7 +13,10 @@ import com.example.divent.R
 import com.example.divent.core.data.Resource
 import com.example.divent.core.domain.model.DetailEvent
 import com.example.divent.databinding.ActivityDetailBinding
+import com.example.divent.ui.content.favorite.FavoriteFragment.Companion.ID
+import com.example.divent.ui.content.setting.SettingsViewModel
 import com.example.divent.util.Mapper
+import com.example.divent.util.SettingUtil
 import dagger.hilt.android.AndroidEntryPoint
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
@@ -27,16 +30,22 @@ class DetailActivity : AppCompatActivity() {
     var id =0
     private val compositeDisposable = CompositeDisposable()
     private val checkBoxClicks = PublishSubject.create<Boolean>()
+
+    private val settingViewModel: SettingsViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setActionBar()
 
+        settingViewModel.theme.observe(this) { theme ->
+            SettingUtil.setDarkMode(theme == "Dark")
+        }
+
         if(viewModel.detailData!=null){
             showData(viewModel.detailData!!)
         }else{
-            id = intent.getIntExtra("id",0)
+            id = intent.getIntExtra(ID,0)
             lifecycleScope.launch {
                 viewModel.getDetailEvent(id).observe(this@DetailActivity){
                     when(it){
@@ -119,16 +128,16 @@ class DetailActivity : AppCompatActivity() {
 
     private fun showLoading(isShow:Boolean){
         binding.loading.loading.visibility= if (isShow) View.VISIBLE else View.GONE
-        binding.btRegis.isEnabled= if(isShow) false else true
+        binding.btRegis.isEnabled= !isShow
     }
     private fun showError(isShow:Boolean){
         binding.noData.noData.visibility= if (isShow) View.VISIBLE else View.GONE
-        binding.btRegis.isEnabled= if(isShow) false else true
+        binding.btRegis.isEnabled= !isShow
     }
 
     private fun showItem(isShow:Boolean){
         binding.allItems.visibility= if (isShow) View.VISIBLE else View.GONE
-        binding.btRegis.isEnabled= if(isShow) true else false
+        binding.btRegis.isEnabled= isShow
     }
 
     private fun setActionBar() {

@@ -2,7 +2,6 @@ package com.example.divent.util
 
 
 import android.widget.SearchView
-import androidx.appcompat.app.AppCompatDelegate
 import io.reactivex.rxjava3.subjects.PublishSubject
 
 fun SearchView.getQueryTextChangeObservable(): io.reactivex.rxjava3.core.Observable<String> {

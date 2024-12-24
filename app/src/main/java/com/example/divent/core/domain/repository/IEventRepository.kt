@@ -9,4 +9,5 @@ import kotlinx.coroutines.flow.Flow
 interface IEventRepository {
     suspend fun getEvent(type: EVENT, q:String?=null, limit:Int?=null): Flow<Resource<List<Event>>>
     suspend fun getDetailEvent(id:Int): Flow<Resource<DetailEvent>>
+    suspend fun getEvent2(type: EVENT,  limit: Int = 0): Event?
 }

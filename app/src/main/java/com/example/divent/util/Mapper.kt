@@ -17,18 +17,6 @@ object Mapper {
         )
     }
 
-    fun domainToEntity(domain:Event):EntityEvent{
-        return EntityEvent(
-            id = domain.id,
-            beginTime = domain.beginTime,
-            imageLogo = domain.imageLogo,
-            mediaCover = domain.mediaCover,
-            name = domain.name,
-            quota = domain.quota,
-            registrants = domain.registrants
-        )
-    }
-
     fun detailDomainToEntity(domain:DetailEvent):EntityEvent{
         return EntityEvent(
             id = domain.id,

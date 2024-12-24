@@ -78,10 +78,6 @@ class FavoriteFragment : Fragment() {
         return _binding!!.root
     }
 
-    private fun setAdapter(){
-        viewModel.favEvets?.let { eventAdapter.updateData(it) }
-    }
-
     private fun showLoading(isShow:Boolean){
         binding.loading.loading.visibility= if (isShow) View.VISIBLE else View.GONE
     }

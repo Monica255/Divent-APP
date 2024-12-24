@@ -16,6 +16,12 @@ interface ApiService {
         @Query("limit") limit: Int? =null,
     ): Response<EventResponse>
 
+    @GET("events")
+    suspend fun getOneEvent(
+        @Query("active") active: Int,
+        @Query("limit") limit: Int =1,
+    ): Response<EventResponse>
+
     @GET("events/{id}")
     suspend fun getDetailEvent(
         @Path("id") id: Int,

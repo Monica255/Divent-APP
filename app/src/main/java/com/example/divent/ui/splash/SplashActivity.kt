@@ -25,7 +25,7 @@ class SplashActivity : AppCompatActivity() {
 
         viewModel.theme.observe(this) { theme ->
             val dark =theme == "Dark"
-            SettingUtil.SetDarkMode(dark)
+            SettingUtil.setDarkMode(dark)
             Handler(Looper.getMainLooper()).postDelayed({
                 val intent = Intent(this, HomeActivity::class.java)
                 startActivity(intent)

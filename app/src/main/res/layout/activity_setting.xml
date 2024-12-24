@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     style="@style/screen"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -23,31 +23,34 @@
             android:textSize="20sp" />
     </androidx.appcompat.widget.Toolbar>
 
+    <!-- Title -->
     <TextView
         android:id="@+id/tv_title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         android:layout_marginTop="@dimen/margin_start_end"
         android:layout_marginStart="@dimen/margin_start_end"
-        android:text="Settings"
+        android:text="@string/settings"
         android:textSize="24sp"
         android:textStyle="bold"
         style="@style/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <!-- Description -->
     <TextView
         android:layout_marginTop="@dimen/margin_variation"
         android:id="@+id/tv_desc"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_title"
         android:layout_marginStart="@dimen/margin_start_end"
-        android:text="Ubah pengaturan tema dan notifikasi"
+        android:text="@string/change_theme_and_notification_settings"
         android:textSize="16sp"
         style="@style/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <!-- CardView for Settings -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -63,6 +66,7 @@
             android:orientation="vertical"
             android:padding="@dimen/margin_variation">
 
+            <!-- Theme Settings -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -72,6 +76,7 @@
                 <TextView
                     android:id="@+id/themeText"
                     style="@style/text"
+                    android:textStyle="bold"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -82,34 +87,68 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end" />
-
             </LinearLayout>
 
+            <TextView
+                style="@style/text"
+                android:textSize="12sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/enable_dark_theme" />
 
+            <!-- Notification Settings -->
             <LinearLayout
+                android:layout_marginTop="@dimen/margin_variation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <TextView
+                    android:textStyle="bold"
                     android:id="@+id/notifText"
                     style="@style/text"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/enable_notification" />
+                    android:text="@string/daily_reminder" />
 
                 <androidx.appcompat.widget.SwitchCompat
                     android:id="@+id/notifSwitch"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end" />
-
             </LinearLayout>
 
+            <TextView
+                style="@style/text"
+                android:textSize="12sp"
+                android:layout_marginBottom="@dimen/margin_variation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/enable_notification" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:textSize="12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/set_time"
+                    style="@style/text"
+                    android:layout_marginEnd="8dp" />
+
+                <TimePicker
+                    android:layout_weight="1"
+                    android:id="@+id/timePicker"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:timePickerMode="spinner" />
+            </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

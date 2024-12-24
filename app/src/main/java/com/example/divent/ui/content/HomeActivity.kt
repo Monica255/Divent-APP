@@ -9,7 +9,6 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.example.divent.R
 import com.example.divent.databinding.ActivityHomeBinding
-import com.example.divent.ui.content.detail.DetailActivity
 import com.example.divent.ui.content.setting.SettingActivity
 import dagger.hilt.android.AndroidEntryPoint
 
