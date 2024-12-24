@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.divent.R
 import com.example.divent.core.data.Resource
 import com.example.divent.databinding.FragmentFavoriteBinding
 import com.example.divent.ui.content.EventAdapter
@@ -57,9 +58,13 @@ class FavoriteFragment : Fragment() {
                 }
                 is Resource.Success->{
                     showLoading(false)
-                    showError(false)
                     showItem(true)
                     it.data?.let { it1 -> eventAdapter.updateData(it1) }
+                    if(!it.data.isNullOrEmpty()){
+                        showError(false)
+                    }else{
+                        showError(true,"No Data Found")
+                    }
                 }
                 is Resource.Error->{
                     showLoading(false)
@@ -82,8 +87,9 @@ class FavoriteFragment : Fragment() {
         binding.loading.loading.visibility= if (isShow) View.VISIBLE else View.GONE
     }
 
-    private fun showError(isShow:Boolean){
+    private fun showError(isShow:Boolean,text:String= resources.getString(R.string.something_went_wrong)){
         binding.noData.noData.visibility= if (isShow) View.VISIBLE else View.GONE
+        binding.noData.tvDesc.text = text
     }
 
     private fun showItem(isShow:Boolean){

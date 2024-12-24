@@ -30,7 +30,9 @@
         android:id="@+id/rv_event"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/searchView"
-        android:layout_margin="@dimen/margin_variation"
+        android:layout_marginTop="@dimen/margin_variation"
+        android:layout_marginEnd="@dimen/margin_variation"
+        android:layout_marginStart="@dimen/margin_variation"
         android:layout_width="match_parent"
         android:layout_height="0dp" />
     <include

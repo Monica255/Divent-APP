@@ -20,6 +20,7 @@
         app:lottie_speed="1"
         app:lottie_rawRes="@raw/loading_no_data" />
     <TextView
+        android:id="@+id/tv_desc"
         android:text="@string/something_went_wrong"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

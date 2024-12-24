@@ -28,7 +28,7 @@ object WorkManagerHelper {
         calendar.set(Calendar.SECOND, 0)
 
         if (calendar.timeInMillis < currentTime) {
-            calendar.add(Calendar.DATE, 1) // Set untuk besaok jika waktu sudah lewat
+            calendar.add(Calendar.DATE, 1) // Set untuk besok jika waktu sudah lewat
         }
 
         return calendar.timeInMillis - currentTime

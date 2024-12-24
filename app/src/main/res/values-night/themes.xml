@@ -50,6 +50,6 @@
         <item name="iconTint">@color/white</item>
         <item name="iconTintActive">@color/white</item>
         <item name="textColor">@color/white</item>
-        <item name="backgroundColor">@color/dark_blue</item>
+        <item name="backgroundColor">@color/dark_blue2</item>
     </style>
 </resources>
