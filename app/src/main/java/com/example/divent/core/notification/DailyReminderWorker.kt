@@ -36,7 +36,7 @@ class DailyReminderWorker(
         executeThread {
             try {
                 CoroutineScope(Dispatchers.IO).launch {
-                    val data = repository.getEvent2(EVENT.ACTIVE, limit = 1)
+                    val data = repository.getEvent2(EVENT.UPCOMING, limit = 1)
                     data?.let {
                         showNotification(context, it)
                     }

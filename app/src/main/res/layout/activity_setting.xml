@@ -83,6 +83,7 @@
                     android:text="@string/dark_theme" />
 
                 <androidx.appcompat.widget.SwitchCompat
+                    android:enabled="false"
                     android:id="@+id/themeSwitch"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -114,6 +115,7 @@
                     android:text="@string/daily_reminder" />
 
                 <androidx.appcompat.widget.SwitchCompat
+                    android:enabled="false"
                     android:id="@+id/notifSwitch"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
