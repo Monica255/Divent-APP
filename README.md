@@ -6,10 +6,9 @@ Divent is an Android app that provides information about upcoming and finished e
 - **Home**: Displays upcoming and finished events.
 - **Upcoming Events**: A list of upcoming events with a search bar to filter events.
 - **Finished Events**: A list of finished events with a search bar to filter events.
+- **Favorite Events**: Save your favorite events for easy access anytime.
 - **Dark Mode**: Toggle dark mode for a better user experience, using DataStore for persistence.
 - **Daily Reminder**: Set reminders for events using WorkManager.
-- **Clean Architecture**: Follows a clean architecture pattern for maintainability and scalability.
-- **Animations**: Utilizes Lottie for smooth animations.
 
 ## Screenshots
 Here are some screenshots of the app, including dark mode:
