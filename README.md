@@ -43,4 +43,4 @@ Here are some screenshots of the app, including dark mode:
 ---
 
 ## Conclusion
-Divent provides an efficient and easy-to-use interface for accessing and managing Dicoding events, with thoughtful features like dark mode, reminders, and smooth navigation. Built using modern Android technologies and clean architecture, this app ensures a robust, scalable, and enjoyable user experience. We hope you enjoy using Divent and stay updated with your learning journey through Dicoding events!
+Divent offers a simple and user-friendly interface for browsing and managing Dicoding events, featuring functionalities like dark mode, reminders, and seamless navigation. Built with modern Android technologies and clean architecture, this app demonstrates a focus on scalability and maintainability.
