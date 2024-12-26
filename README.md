@@ -1,6 +1,6 @@
 # Divent - Dicoding Event App
 
-Divent is an Android app that provides information about upcoming and finished events from Dicoding, a popular learning platform offering courses and seminars. The app uses real API data from Dicoding and presents it in a user-friendly interface with features such as dark mode, event search, and daily reminders.
+Divent is an Android app that provides information about upcoming and finished events from Dicoding, a learning platform offering courses , sertifications and seminars. The app uses real API data from Dicoding and presents it in a user-friendly interface with features such as dark mode, event search, and daily reminders.
 
 ## Features
 - **Home**: Displays upcoming and finished events.
