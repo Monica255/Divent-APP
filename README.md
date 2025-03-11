@@ -26,7 +26,7 @@ Here are some screenshots of the app, including dark mode:
 
 ## Technologies Used
 - **Language**: Kotlin
-- **Architecture**: Clean Architecture
+- **Architecture**: Clean MVVM Architecture
 - **Libraries**:
   - **RxJava**: For reactive programming.
   - **Hilt**: For dependency injection.
